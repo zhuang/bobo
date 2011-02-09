@@ -18,7 +18,7 @@ public class ReverseDocComparatorSource extends DocComparatorSource {
 		return new ReverseDocComparator(_inner.getComparator(reader, docbase));
 	}
 	
-	public static class ReverseDocComparator extends DocComparator{
+	public static class ReverseDocComparator extends DocComparator implements Serializable {
 		private final DocComparator _comparator;
 		public ReverseDocComparator(DocComparator comparator){
 			_comparator = comparator;

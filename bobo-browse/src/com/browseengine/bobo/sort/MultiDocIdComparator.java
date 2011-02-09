@@ -3,6 +3,7 @@ package com.browseengine.bobo.sort;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.Scorer;
 
+import java.io.Serializable;
 
 public class MultiDocIdComparator extends DocComparator {
 	private final DocComparator[] _comparators;
@@ -30,7 +31,7 @@ public class MultiDocIdComparator extends DocComparator {
 		return new MultiDocIdComparable(doc, _comparators);
 	}
 	
-	public static class MultiDocIdComparable implements Comparable
+	public static class MultiDocIdComparable implements Comparable, Serializable
 	{
 	  private ScoreDoc _doc;
 	  private DocComparator[] _comparators;
